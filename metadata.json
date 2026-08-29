@@ -1,0 +1,8 @@
+{
+  "name": "Remix Ruli Lesmana - Pendidik DKV \u0026 Informatika",
+  "description": "Website Pribadi Pendidik Profesional 2026 Ruli Lesmana, S.T. Gr. - Guru Dasar-Dasar DKV \u0026 Informatika, Hub Pembelajaran Digital, Portofolio Kreatif \u0026 Administrasi Mengajar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

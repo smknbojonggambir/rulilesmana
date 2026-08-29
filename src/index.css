@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  html:not(.dark) * {
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Custom futuristic scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.5);
+}
+
+/* Bento card styling - Dark Mode (Default / .dark) */
+.dark .bento-card {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.85) 0%, rgba(15, 23, 42, 0.75) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .bento-card:hover {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 12px 32px -8px rgba(239, 68, 68, 0.15);
+}
+
+.dark .bento-glass {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Bento card styling - Light Mode */
+html:not(.dark) .bento-card {
+  background: #ffffff;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html:not(.dark) .bento-card:hover {
+  border-color: rgba(220, 38, 38, 0.35);
+  box-shadow: 0 12px 30px -6px rgba(220, 38, 38, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+}
+
+html:not(.dark) .bento-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Subtle background tech grid pattern */
+.dark .bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+html:not(.dark) .bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+/* =========================================================
+   RPM.KANGRULI.WEB.ID VISUAL SYNCING PULSE ANIMATIONS
+   ========================================================= */
+
+@keyframes rpmPulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5), inset 0 0 15px rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 24px 4px rgba(245, 158, 11, 0.35), inset 0 0 25px rgba(245, 158, 11, 0.2);
+    border-color: rgba(251, 191, 36, 0.95);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5), inset 0 0 15px rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.7);
+  }
+}
+
+@keyframes rpmWidgetPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4), inset 0 0 10px rgba(220, 38, 38, 0.05);
+    border-color: rgba(220, 38, 38, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px 2px rgba(220, 38, 38, 0.25), inset 0 0 20px rgba(220, 38, 38, 0.15);
+    border-color: rgba(239, 68, 68, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4), inset 0 0 10px rgba(220, 38, 38, 0.05);
+    border-color: rgba(220, 38, 38, 0.6);
+  }
+}
+
+@keyframes rpmShimmerSweep {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+@keyframes rpmRotateSync {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.widget-sync-pulse-amber {
+  animation: rpmPulseGlow 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.widget-sync-pulse-indigo {
+  animation: rpmWidgetPulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.sync-shimmer-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sync-shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 158, 11, 0.15) 50%,
+    transparent 100%
+  );
+  animation: rpmShimmerSweep 1.8s infinite ease-in-out;
+}
+
